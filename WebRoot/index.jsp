@@ -6,10 +6,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>太原理工教务处APPserver</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -21,6 +22,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    失败. <br>
+   <form action="http://tyutappservice.mybluemix.net/login.action" method="post">
+    		用户名称：<input type="text" name="username"><br>
+    		用户密码：<input type="password" name="password"><br>
+    			<input type="submit" value="登录">
+    	</form>
+
   </body>
 </html>

@@ -101,7 +101,7 @@ public class KSGLdao {
 					+ (System.currentTimeMillis() - start) + "ms");
 		}
 	}
-	//删除测试通过
+	//删除test通过
 	public void scks(String cookie){
 		
 		String url = "http://202.207.247.44:8065/kwBmAction.do?oper=bkdelete&kch=CET6&ksbh=2015-2016-2-1-02&kxh=0&sfzdxs=null";

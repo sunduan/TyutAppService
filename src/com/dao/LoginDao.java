@@ -21,13 +21,6 @@ public class LoginDao {
 		}
 		//Test3 t = new Test3();
 		//t.js(tyutLogin.cookies);
-		
-		KSGLdao ksgLdao=new KSGLdao();
-		ksgLdao.getListKsxx(tyutLogin.cookie);
-		ksgLdao.ksbm(tyutLogin.cookie);
-		ksgLdao.getListKsxx(tyutLogin.cookie);
-		ksgLdao.scks(tyutLogin.cookie);
-		ksgLdao.getListKsxx(tyutLogin.cookie);
 		MessageLogin messageTyut=new MessageLogin(1, Integer.parseInt(getBOO), tyutLogin.cookies.get(0).getValue());
 		
 		return messageTyut;
