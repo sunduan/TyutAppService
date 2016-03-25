@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="TyutAppService"
+  id="myeclipse.1456206677270"
+  context-root="/TyutAppService"
+  j2ee-spec="5.0"
+  archive="TyutAppService.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
