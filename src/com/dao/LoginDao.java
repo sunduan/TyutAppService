@@ -24,7 +24,10 @@ public class LoginDao {
 		
 		KSGLdao ksgLdao=new KSGLdao();
 		ksgLdao.getListKsxx(tyutLogin.cookie);
-		
+		ksgLdao.ksbm(tyutLogin.cookie);
+		ksgLdao.getListKsxx(tyutLogin.cookie);
+		ksgLdao.scks(tyutLogin.cookie);
+		ksgLdao.getListKsxx(tyutLogin.cookie);
 		MessageLogin messageTyut=new MessageLogin(1, Integer.parseInt(getBOO), tyutLogin.cookies.get(0).getValue());
 		
 		return messageTyut;
