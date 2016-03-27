@@ -11,6 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>太原理工教务处APPserver</title>
+   
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -22,6 +23,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <div>呵呵</div>
+  <div>dd</div>
+  <div>gittwo</div>
+  
    <form action="http://tyutappservice.mybluemix.net/login.action" method="post">
     		用户名称：<input type="text" name="username"><br>
     		用户密码：<input type="password" name="password"><br>
