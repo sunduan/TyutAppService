@@ -23,8 +23,6 @@ public class TyutLogin extends BaseLogin {
 	public TyutLogin() {
 
 	}
-	//2012005273
-	//140105199309100026
 	/*
 	 * public static void main(String arg[]) { boolean getBOO = false; TyutLogin
 	 * tl =null; for(;!getBOO;){ User user = new User("2012005003",
@@ -33,12 +31,14 @@ public class TyutLogin extends BaseLogin {
 	 * getBOO= tl.login("", user); for(;!getBOO;getBOO=tl.login("", user)); tl=
 	 * new TyutLogin();} Test3 t=new Test3(); t.js(tl.cookies); }
 	 */
-
+private String testurl="202.207.247.44";
 	public String login(String university, User user) {
 		System.out.println(user.getUsername());
-		this.loginurl = "http://202.207.247.44:8065/loginAction.do";
+		//http://202.207.247.49
+		//"http://202.207.247.44:8065
+		this.loginurl = "http://"+testurl+":8065/loginAction.do";
 		this.cookiename = "JSESSIONID=";
-		this.cookieurl = "http://202.207.247.44:8065/validateCodeAction.do?random="
+		this.cookieurl = "http://"+testurl+":8065/validateCodeAction.do?random="
 				+ Math.random();
 		this.getCookie();
 		// this.cookie="bdc4JtKs639VNdcNO3Nlv";
@@ -72,7 +72,7 @@ public class TyutLogin extends BaseLogin {
 
 	public void getLoginCookie() {
 
-		String destUrl = "http://202.207.247.44:8065";
+		String destUrl = "http://"+testurl+":8065";
 		HttpClient httpClient = new DefaultHttpClient();
 
 		HttpGet httpGet = new HttpGet(destUrl);
