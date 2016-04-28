@@ -2,25 +2,19 @@ package TYUTservice.data;
 
 public class MessageKsgl extends MessageTyut {
 
-	private int status;
+
 	private String ksmc;
 	private String ksks;
 	private String ksjs;
 	private int bmzt;
-	public int getStatus() {
-		return status;
-	}
-	public MessageKsgl(int status, String ksmc, String ksks, String ksjs,
+
+	public MessageKsgl(int id,int status,String ksmc, String ksks, String ksjs,
 			int bmzt) {
-		super();
-		this.status = status;
+		super(id,status);
 		this.ksmc = ksmc;
 		this.ksks = ksks;
 		this.ksjs = ksjs;
 		this.bmzt = bmzt;
-	}
-	public void setStatus(int status) {
-		this.status = status;
 	}
 	public String getKsmc() {
 		return ksmc;

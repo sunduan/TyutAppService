@@ -46,6 +46,7 @@ public class LoginAction {
 	public void login() throws Exception {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
 		PrintWriter out;
 		out = response.getWriter();
 		JSONObject json = new JSONObject();

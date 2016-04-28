@@ -1,6 +1,5 @@
 package TYUTservice.data;
 
-import sun.applet.Main;
 
 public class MessageLogin extends MessageTyut {
 	public MessageLogin(int id, int status, String cookie) {
@@ -19,10 +18,5 @@ public class MessageLogin extends MessageTyut {
 
 	// cookie
 	private String cookie;
-	public  static void main(String arg[]){
-		MessageLogin m=new MessageLogin(1, 2, "dfd");
-		
-		
-	}
 
 }

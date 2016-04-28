@@ -7,69 +7,54 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-
-
 public class Test {
 	public Test() {
 
 	}
-/*
-	public static void main(String[] arg) {
-		
-		 * int n = 0x12345678;
-		 * 
-		 * System.out.println("" + (n & 0xff));
-		 
-		Test t = new Test();
 
-		// for(int i=0;i<100;i++){ t.twoJpg(i);}
+	/*
+	 * public static void main(String[] arg) {
+	 * 
+	 * int n = 0x12345678;
+	 * 
+	 * System.out.println("" + (n & 0xff));
+	 * 
+	 * Test t = new Test();
+	 * 
+	 * // for(int i=0;i<100;i++){ t.twoJpg(i);}
+	 * 
+	 * for (int i = 0; i < 100; i++) { t.writeFg(i); }
+	 * 
+	 * System.out.println(t.fg(t.twoJpg(0)));
+	 * 
+	 * 
+	 * //int wh[][] = null;
+	 * 
+	 * BufferedImage bufferedImage = null; try { bufferedImage =
+	 * ImageIO.read(new File("F:/App閿熸枻鎷�twojpg/" +1 + ".bmp")); int
+	 * a=bufferedImage.getWidth(); System.out.print(a); } catch (IOException e)
+	 * { // TODO Auto-generated catch block e.printStackTrace(); }
+	 * 
+	 * 
+	 * 
+	 * }
+	 */
 
-		for (int i = 0; i < 100; i++) {
-			t.writeFg(i);
-		}
-		
-		System.out.println(t.fg(t.twoJpg(0)));
-		
-		
-		//int wh[][] = null;
-		
-		BufferedImage bufferedImage = null;
-		try {
-			bufferedImage = ImageIO.read(new File("F:/App閿熸枻鎷�twojpg/" +1
-					+ ".bmp"));
-			int a=bufferedImage.getWidth();
-			System.out.print(a);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		
-	}*/
-
-	/*public void writeFg(int i) {
-		BufferedImage bufferedImage = null;
-		try {
-			bufferedImage = ImageIO.read(new File("F:/App閿熸枻鎷�twojpg/" + i
-					+ ".bmp"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		fg(bufferedImage, i);
-		bufferedImage.flush();
-	}*/
+	/*
+	 * public void writeFg(int i) { BufferedImage bufferedImage = null; try {
+	 * bufferedImage = ImageIO.read(new File("F:/App閿熸枻鎷�twojpg/" + i +
+	 * ".bmp")); } catch (IOException e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } fg(bufferedImage, i); bufferedImage.flush(); }
+	 */
 
 	public BufferedImage twoJpg(BufferedImage buf) {
 
-		/*BufferedImage bufferedImage = null;
-		try {
-			bufferedImage = ImageIO.read(new File("F:/App閿熸枻鎷�jpg/" + i + ".jpg"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+		/*
+		 * BufferedImage bufferedImage = null; try { bufferedImage =
+		 * ImageIO.read(new File("F:/App閿熸枻鎷�jpg/" + i + ".jpg")); } catch
+		 * (IOException e) { // TODO Auto-generated catch block
+		 * e.printStackTrace(); }
+		 */
 		int h = buf.getHeight();
 
 		int w = buf.getWidth();
@@ -121,55 +106,55 @@ public class Test {
 			}
 
 		}
-		/*try {
-			ImageIO.write(binaryBufferedImage, "bmp", new File(
-					"F:/App閿熸枻鎷�twojpg/" + i + ".bmp"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+		/*
+		 * try { ImageIO.write(binaryBufferedImage, "bmp", new File(
+		 * "F:/App閿熸枻鎷�twojpg/" + i + ".bmp")); } catch (IOException e) { //
+		 * TODO Auto-generated catch block e.printStackTrace(); }
+		 */
 		return binaryBufferedImage;
 
 	}
 
-/*	public static boolean isBlack(int colorInt) {
-
-		Color color = new Color(colorInt);
-
-		if (color.getRed() + color.getGreen() + color.getBlue() <= 300) {
-			return true;
-
-		}
-
-		return false;
-
-	}
-
-	public static boolean isWhite(int colorInt) {
-
-		Color color = new Color(colorInt);
-
-		if (color.getRed() + color.getGreen() + color.getBlue() > 300) {
-
-			return true;
-
-		}
-
-		return false;
-
-	}
-
-	public static int isBlackOrWhite(int colorInt) {
-
-		if (getColorBright(colorInt) < 30 || getColorBright(colorInt) > 730) {
-
-			return 1;
-
-		}
-
-		return 0;
-
-	}*/
+	/*
+	 * public static boolean isBlack(int colorInt) {
+	 * 
+	 * Color color = new Color(colorInt);
+	 * 
+	 * if (color.getRed() + color.getGreen() + color.getBlue() <= 300) { return
+	 * true;
+	 * 
+	 * }
+	 * 
+	 * return false;
+	 * 
+	 * }
+	 * 
+	 * public static boolean isWhite(int colorInt) {
+	 * 
+	 * Color color = new Color(colorInt);
+	 * 
+	 * if (color.getRed() + color.getGreen() + color.getBlue() > 300) {
+	 * 
+	 * return true;
+	 * 
+	 * }
+	 * 
+	 * return false;
+	 * 
+	 * }
+	 * 
+	 * public static int isBlackOrWhite(int colorInt) {
+	 * 
+	 * if (getColorBright(colorInt) < 30 || getColorBright(colorInt) > 730) {
+	 * 
+	 * return 1;
+	 * 
+	 * }
+	 * 
+	 * return 0;
+	 * 
+	 * }
+	 */
 
 	public static int getColorBright(int colorInt) {
 
@@ -258,12 +243,12 @@ public class Test {
 		BufferedImage binaryBufferedImage = null;
 		int w = buff.getWidth();
 		int h = buff.getHeight();
-		String yzm="";
-		//System.out.println(w+","+h);
-		// 閿熷彨闈╂嫹閿熺粸鍢変紮鎷烽敓锟�		
+		String yzm = "";
+		// System.out.println(w+","+h);
+		// 閿熷彨闈╂嫹閿熺粸鍢変紮鎷烽敓锟�
 		int ix = 0, iy = 0;
 		for (int i = 0; i < 4; i++) {
-			int cal=0;
+			int cal = 0;
 			int top = 0;
 			int dop = 0;
 			int left = 0;
@@ -280,7 +265,7 @@ public class Test {
 					if (r == 0x00) {
 						//
 						int c = 0, cc = 0, t, tt;
-						//System.out.print(x + "," + y + ",");
+						// System.out.print(x + "," + y + ",");
 						if (x == 59) {
 
 							right = 59;
@@ -371,66 +356,72 @@ public class Test {
 			}
 
 			// System.out.println(w+","+h+","+left+","+top+","+right+","+dop);
-			/*binaryBufferedImage = new BufferedImage(right - left + 1, dop - top
-					+ 1, BufferedImage.TYPE_3BYTE_BGR);*/
-			
-			int wh[][]=GetData.getWh();
-			int mm=0;
-			for(int z=48;z<122;z++){
-				int nn=0;
-				//System.out.println(wh[0][0]);
-			if(right-left+1==wh[z][0]&&dop-top+1==wh[z][1]){
-				//System.out.print(z+",");
-				try {
-					String classpath=GetData.class.getResource("").getPath();
-					
-					String fpath1[]=classpath.split("WEB-INF/classes/",2);
-					//String fpath[]=fpath1[0].split("/", 2);
-					binaryBufferedImage = ImageIO.read(new File(fpath1[0]+"TYUTjavamodel/"+z+".bmp"));
-					//System.out.println("z是"+fpath[1]);
-					if(binaryBufferedImage!=null){
-						//System.out.println("get");
-					}
-					for (int ex = left, mx = 0; ex <= right; ex++, mx++) {
-						for (int ey = top, my = 0; ey <= dop; ey++, my++) {
-							
-							if(buff.getRGB(ex, ey)==binaryBufferedImage.getRGB(mx, my)){
-								//System.out.print(binaryBufferedImage.getRGB(mx, my));
-							
-							nn++;}
-						}
-					}
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}else{
-				
-			}
-			
-			if(nn>mm){
-				
-				cal=z;
-				mm=nn;
-				//System.out.println("mm閿熸枻鎷�"+mm);
-			}
-			}
-			//System.out.print(cal+",");
-			System.out.print((char)cal+",");
-			yzm+=""+(char)cal;
-			/*for (int ex = left, mx = 0; ex <= right; ex++, mx++) {
-				for (int ey = top, my = 0; ey <= dop; ey++, my++) {
+			/*
+			 * binaryBufferedImage = new BufferedImage(right - left + 1, dop -
+			 * top + 1, BufferedImage.TYPE_3BYTE_BGR);
+			 */
 
-					binaryBufferedImage.setRGB(mx, my, buff.getRGB(ex, ey));
+			int wh[][] = GetData.getWh();
+			int mm = 0;
+			for (int z = 48; z < 122; z++) {
+				int nn = 0;
+				// System.out.println(wh[0][0]);
+				if (right - left + 1 == wh[z][0] && dop - top + 1 == wh[z][1]) {
+					// System.out.print(z+",");
+					try {
+						String classpath = GetData.class.getResource("")
+								.getPath();
+
+						String fpath1[] = classpath
+								.split("WEB-INF/classes/", 2);
+						// String fpath[]=fpath1[0].split("/", 2);
+						binaryBufferedImage = ImageIO.read(new File(fpath1[0]
+								+ "TYUTjavamodel/" + z + ".bmp"));
+						// System.out.println("z是"+fpath[1]);
+						if (binaryBufferedImage != null) {
+							// System.out.println("get");
+						}
+						for (int ex = left, mx = 0; ex <= right; ex++, mx++) {
+							for (int ey = top, my = 0; ey <= dop; ey++, my++) {
+
+								if (buff.getRGB(ex, ey) == binaryBufferedImage
+										.getRGB(mx, my)) {
+									// System.out.print(binaryBufferedImage.getRGB(mx,
+									// my));
+
+									nn++;
+								}
+							}
+						}
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				} else {
+
 				}
-			}*/
-			/*try {
-				ImageIO.write(binaryBufferedImage, "bmp", new File(
-						"F:/App閿熸枻鎷�twobmp/" + ui + i + ".bmp"));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
+
+				if (nn > mm) {
+
+					cal = z;
+					mm = nn;
+					// System.out.println("mm閿熸枻鎷�"+mm);
+				}
+			}
+			// System.out.print(cal+",");
+			System.out.print((char) cal + ",");
+			yzm += "" + (char) cal;
+			/*
+			 * for (int ex = left, mx = 0; ex <= right; ex++, mx++) { for (int
+			 * ey = top, my = 0; ey <= dop; ey++, my++) {
+			 * 
+			 * binaryBufferedImage.setRGB(mx, my, buff.getRGB(ex, ey)); } }
+			 */
+			/*
+			 * try { ImageIO.write(binaryBufferedImage, "bmp", new File(
+			 * "F:/App閿熸枻鎷�twobmp/" + ui + i + ".bmp")); } catch (IOException e)
+			 * { // TODO Auto-generated catch block e.printStackTrace(); }
+			 */
 			ix = right + 1;
 			// value[i][0]=left
 
@@ -438,10 +429,8 @@ public class Test {
 		System.out.println("");
 		return yzm;
 	}
-	
-	public void sb(){
-		
-		
-		
+
+	public void sb() {
+
 	}
 }

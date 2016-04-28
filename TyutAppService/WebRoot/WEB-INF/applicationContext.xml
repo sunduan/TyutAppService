@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans
-	xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
-<bean id="service" class="com.service.UserService" scope="prototype">
+	<!-- dao -->
+	<bean id="loginDao" class="com.dao.LoginDao" scope="prototype">
+	</bean>
+	<bean id="FACJdao" class="com.dao.FACJdao" scope="prototype">
+	</bean>
+	
+	<!-- service -->
+	<bean id="userService" class="com.service.UserService" scope="prototype">
+		<property name="dao" ref="loginDao"></property>
+	</bean>
+	<bean id="FACJservice" class="com.service.FACJservice" scope="prototype">
+		<property name="facJdao" ref="FACJdao"></property>
+	</bean>
 
-</bean>
-<bean id="login" class="com.action.LoginAction" scope="prototype">
-        <property name="service" ref="service"></property>
-    </bean>
+
+	<!-- action -->
+	<bean id="loginAction" class="com.action.LoginAction" scope="prototype">
+		<property name="service" ref="userService"></property>
+	</bean>
+	<bean id="facjAction" class="com.action.FacjAction" scope="prototype">
+		<property name="facJservice" ref="FACJservice"></property>
+	</bean>
+	
 </beans>

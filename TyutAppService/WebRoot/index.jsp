@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div>dd</div>
   <div>gittwo</div>
   
-   <form action="http://tyutappservice-dxc.mybluemix.net/login.action" method="post">
+   <form action="login" method="post">
     		用户名称：<input type="text" name="username"><br>
     		用户密码：<input type="password" name="password"><br>
     			<input type="submit" value="登录">

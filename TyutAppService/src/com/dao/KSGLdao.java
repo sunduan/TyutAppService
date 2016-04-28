@@ -31,7 +31,8 @@ public class KSGLdao {
 					+ (System.currentTimeMillis() - start) + "ms");
 		}
 		Elements a = doc.select("a");
-		for (int i = 0; i < a.size(); i++) {
+		int l=a.size();
+		for (int i = 0; i < l; i++) {
 			// ¿¼Ô‡ÐÅÏ¢
 			Element ta = a.get(i);
 			// hrefÖµ
@@ -78,7 +79,7 @@ public class KSGLdao {
 			// kwBmAction.do?oper=bkbm&sfzdxs=·ñ&ksbh=2015-2016-2-1-02&kch=CET6&kxh=0
 			// É¾³ý
 			// kwBmAction.do?oper=bkdelete&kch=CET6&ksbh=2015-2016-2-1-02&kxh=0&sfzdxs=null
-			list.add(new MessageKsgl(3, ksmc, ksks, ksjs, bmzt));
+			list.add(new MessageKsgl(5,3, ksmc, ksks, ksjs, bmzt));
 
 		}
 

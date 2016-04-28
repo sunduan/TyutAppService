@@ -8,10 +8,16 @@ import com.dao.LoginDao;
 import vo.User;
 
 public class UserService {
+	private LoginDao dao;
 	public MessageLogin userLogin(User user){
-		LoginDao dao=new LoginDao();
 		return dao.userlogin(user);
 	}
 	//public String userYxkc()
+	public LoginDao getDao() {
+		return dao;
+	}
+	public void setDao(LoginDao dao) {
+		this.dao = dao;
+	}
 
 }
