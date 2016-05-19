@@ -3,13 +3,14 @@ package com.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.cookie.Cookie;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import TYUTservice.data.*;
+import TYUTservice.data.MessageKsgl;
+import TYUTservice.data.MessageTyut;
+
+import com.network.Jsoupcookie;
 
 public class KSGLdao {
 	public List<MessageTyut> getListKsxx(String cookie) {
@@ -18,18 +19,9 @@ public class KSGLdao {
 		// 本学期成绩
 		// String url = "http://202.207.247.44:8065/bxqcjcxAction.do";
 		// 本学期课表
-		String url = "http://202.207.247.44:8065/kwBmAction.do?oper=getKsList";
-		long start = System.currentTimeMillis();
-		Document doc = null;
-		try {
-			// doc = Jsoup.connect(url).get();
-			doc = Jsoup.connect(url).cookie("JSESSIONID", cookie).get();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			System.out.println("Time is:"
-					+ (System.currentTimeMillis() - start) + "ms");
-		}
+		Jsoupcookie jsoupcookie = new Jsoupcookie(
+				"http://202.207.247.44:8065/kwBmAction.do?oper=getKsList", cookie);
+		Document doc = jsoupcookie.getDoc();
 		Elements a = doc.select("a");
 		int l=a.size();
 		for (int i = 0; i < l; i++) {
@@ -39,7 +31,7 @@ public class KSGLdao {
 			String sa = ta.attr("href");
 			System.out.println("详细地址：" + sa);
 			// 考试名称
-			String souce = sa.split("ksmc=")[1];
+			//String souce = sa.split("ksmc=")[1];
 			String ksmc = "";
 
 			// 考試時間
@@ -49,16 +41,7 @@ public class KSGLdao {
 			System.out.println("开始时间为：" + ksks);
 			System.out.println("结束时间为：" + ksjs);
 			int bmzt = 0;
-			try {
-				// doc = Jsoup.connect(url).get();
-				doc = Jsoup.connect("http://202.207.247.44:8065/" + sa)
-						.cookie("JSESSIONID", cookie).get();
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				System.out.println("Time is:"
-						+ (System.currentTimeMillis() - start) + "ms");
-			}
+
 			if (doc.text().indexOf("英语四级") != -1) {
 				ksmc = "CET4";
 			} else if (doc.text().indexOf("英语六级") != -1) {
@@ -87,7 +70,7 @@ public class KSGLdao {
 	}
 
 	// 报名test通过
-	public void ksbm(String cookie) {
+	/*public void ksbm(String cookie) {
 
 		String url = "http://202.207.247.44:8065/kwBmAction.do?oper=bkbm&sfzdxs=否&ksbh=2015-2016-2-1-02&kch=CET6&kxh=0";
 		long start = System.currentTimeMillis();
@@ -101,9 +84,9 @@ public class KSGLdao {
 			System.out.println("Time is:"
 					+ (System.currentTimeMillis() - start) + "ms");
 		}
-	}
+	}*/
 	//删除test通过
-	public void scks(String cookie){
+	/*public void scks(String cookie){
 		
 		String url = "http://202.207.247.44:8065/kwBmAction.do?oper=bkdelete&kch=CET6&ksbh=2015-2016-2-1-02&kxh=0&sfzdxs=null";
 		long start = System.currentTimeMillis();
@@ -117,5 +100,5 @@ public class KSGLdao {
 			System.out.println("Time is:"
 					+ (System.currentTimeMillis() - start) + "ms");
 		}
-	}
+	}*/
 }

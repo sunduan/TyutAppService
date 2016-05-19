@@ -1,4 +1,4 @@
-package TYUTservice.data;
+package TYUTservice.data.msgdata;
 
 public class FacjMsg {
 	private String kch;

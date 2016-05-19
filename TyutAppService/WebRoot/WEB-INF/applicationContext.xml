@@ -7,6 +7,8 @@
 	</bean>
 	<bean id="FACJdao" class="com.dao.FACJdao" scope="prototype">
 	</bean>
+	<bean id="kccXdao" class="com.dao.KCCXdao" scope="prototype"></bean>
+	<bean id="PYFAdao" class="com.dao.PYFAdao" scope="prototype"></bean>
 	
 	<!-- service -->
 	<bean id="userService" class="com.service.UserService" scope="prototype">
@@ -15,7 +17,12 @@
 	<bean id="FACJservice" class="com.service.FACJservice" scope="prototype">
 		<property name="facJdao" ref="FACJdao"></property>
 	</bean>
-
+	<bean id="kccXservice" class="com.service.KCCXservice" scope="prototype">
+		<property name="kccXdao" ref="kccXdao"></property>
+	</bean>
+	<bean id="PYFAservice" class="com.service.PYFAservice" scope="prototype">
+		<property name="pyfAdao" ref="PYFAdao"></property>
+	</bean>
 
 	<!-- action -->
 	<bean id="loginAction" class="com.action.LoginAction" scope="prototype">
@@ -24,5 +31,13 @@
 	<bean id="facjAction" class="com.action.FacjAction" scope="prototype">
 		<property name="facJservice" ref="FACJservice"></property>
 	</bean>
-	
+	<bean id="kcxqAction" class="com.action.KcxqAction" scope="prototype">
+		<property name="kccXservice" ref="kccXservice"></property>
+	</bean>
+	<bean id="kccxAction" class="com.action.KccxAction" scope="prototype">
+		<property name="kccXservice" ref="kccXservice"></property>
+	</bean>
+	<bean id="pyfaAction" class="com.action.PyfaAction" scope="prototype">
+		<property name="pyfAservice" ref="PYFAservice"></property>
+	</bean>
 </beans>

@@ -11,8 +11,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import TYUTservice.data.FacjMsg;
 import TYUTservice.data.MessageFacj;
+import TYUTservice.data.msgdata.FacjMsg;
 
 import com.service.FACJservice;
 
@@ -54,8 +54,8 @@ public class FacjAction {
 			mainjson.put("facjMsgs",key);
 			
 		}else{
-			mainjson.put("id","3");
-			mainjson.put("status","1");
+			mainjson.put("id",facj.getId());
+			mainjson.put("status",facj.getStatus());
 		}
 		
 		out.println(mainjson);

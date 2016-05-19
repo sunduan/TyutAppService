@@ -1,11 +1,9 @@
 package com.service;
 
+import vo.User;
 import TYUTservice.data.MessageLogin;
-import TYUTservice.data.MessageTyut;
 
 import com.dao.LoginDao;
-
-import vo.User;
 
 public class UserService {
 	private LoginDao dao;

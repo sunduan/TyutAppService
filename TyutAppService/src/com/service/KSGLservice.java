@@ -2,10 +2,9 @@ package com.service;
 
 import java.util.List;
 
-import com.dao.KSGLdao;
-
 import TYUTservice.data.MessageKsgl;
-import TYUTservice.data.MessageTyut;
+
+import com.dao.KSGLdao;
 
 public class KSGLservice {
 	//public MessageTyut 

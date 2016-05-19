@@ -1,15 +1,14 @@
 package com.dao;
 
-import TYUTservice.data.MessageLogin;
-import TYUTservice.data.MessageTyut;
 import vo.User;
+import TYUTservice.data.MessageLogin;
 
 public class LoginDao {
 	
 	public MessageLogin userlogin(User user) {
 		String getBOO = "1";
 		TyutLogin tyutLogin = null;
-		for (; getBOO.equals("1");) {
+		for (; getBOO.equals("1")||getBOO.equals("4");) {
 			// User user = new User("2012005003", "142727199408286017");
 			tyutLogin = new TyutLogin();
 			System.out.println("getbooé_Ê¼");

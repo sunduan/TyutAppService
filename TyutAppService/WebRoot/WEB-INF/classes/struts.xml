@@ -14,10 +14,15 @@
 			<result name="error" >/index.jsp</result> -->
 		</action>
 		
-		<!-- <action name="ksgl" class="ksgl" method="getListKsxx">
-			XML中斜线开头：表示request.getContextPath();路径
-			<result name="success" >/success.jsp</result>
-			<result name="error" >/index.jsp</result>
-		</action> -->
+		<action name="kccx" class="kccxAction" method="getKccxList">
+			<!-- XML中斜线开头：表示request.getContextPath();路径 -->
+			<!-- <result name="success" >/success.jsp</result>
+			<result name="error" >/index.jsp</result> -->
+		</action>
+		
+		<action name="kcxq" class="kcxqAction" method="getKcxqList">
+		</action>
+		<action name="pyfa" class="pyfaAction" method="getPyfaList">
+		</action>
 	</package>
 </struts>    

@@ -18,7 +18,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.AbstractHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.protocol.HTTP;
 
 public class BaseLogin {
 	public String loginurl;
@@ -44,7 +43,7 @@ public class BaseLogin {
 		String result = "";
 		try {
 			// 锟斤拷锟斤拷HTTP request
-			httpRequest.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+			httpRequest.setEntity(new UrlEncodedFormEntity(params, "utf-8"));
 			// 取锟斤拷HTTP response
 			httpRequest.setHeader("Cookie", cookiename + cookie);
 			httpResponse = client.execute(httpRequest); // 执锟斤拷

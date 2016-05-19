@@ -11,7 +11,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.AbstractHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.protocol.HTTP;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -43,7 +42,7 @@ public class Test3 {
 
 		try {
 			// ����HTTP request
-			httpRequest.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+			httpRequest.setEntity(new UrlEncodedFormEntity(params, "utf-8"));
 			// ȡ��HTTP response
 			httpResponse = client.execute(httpRequest); // ִ��
 			// ��״̬��Ϊ200 ok
