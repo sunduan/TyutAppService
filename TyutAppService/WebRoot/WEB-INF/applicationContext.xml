@@ -9,6 +9,7 @@
 	</bean>
 	<bean id="kccXdao" class="com.dao.KCCXdao" scope="prototype"></bean>
 	<bean id="PYFAdao" class="com.dao.PYFAdao" scope="prototype"></bean>
+	<bean id="GRXXdao"  class="com.dao.GRXXdao" scope="prototype"></bean>
 	
 	<!-- service -->
 	<bean id="userService" class="com.service.UserService" scope="prototype">
@@ -22,6 +23,9 @@
 	</bean>
 	<bean id="PYFAservice" class="com.service.PYFAservice" scope="prototype">
 		<property name="pyfAdao" ref="PYFAdao"></property>
+	</bean>
+	<bean id="GRXXservice" class="com.service.GRXXservice" scope="prototype">
+		<property name="grxXdao" ref="GRXXdao"></property>
 	</bean>
 
 	<!-- action -->
@@ -39,5 +43,8 @@
 	</bean>
 	<bean id="pyfaAction" class="com.action.PyfaAction" scope="prototype">
 		<property name="pyfAservice" ref="PYFAservice"></property>
+	</bean>
+	<bean id="grxxAction" class="com.action.GrxxAction" scope="prototype">
+		<property name="grxXservice" ref="GRXXservice"></property>
 	</bean>
 </beans>

@@ -51,7 +51,7 @@ private String testurl="202.207.247.44";
 		if (cs.indexOf("学分制综合教务") != -1) {
 			System.out.println("登录成功");
 			return "3";
-		} else if (cs.indexOf("您的密码不正确") != -1) {
+		} else if (cs.indexOf("您的密码不正确") != -1||cs.indexOf("你输入的证件号不存在")!=-1) {
 			System.out.println("错误为：您的密码不正确");
 			return "2";
 		} else if (cs.indexOf("你输入的验证码") != -1) {

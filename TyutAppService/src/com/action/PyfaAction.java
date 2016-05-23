@@ -47,7 +47,7 @@ public class PyfaAction {
 			}
 			mainjson.put("id", messagePyfa.getId());
 			mainjson.put("status", messagePyfa.getStatus());
-			mainjson.put("kccxMsgs", key);
+			mainjson.put("pyfaMsgs", key);
 
 		} else {
 			mainjson.put("id", messagePyfa.getId());

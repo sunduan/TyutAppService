@@ -1,7 +1,7 @@
 package com.action;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import com.network.Jsoupcookie;
 
@@ -27,7 +27,9 @@ public class Mate {
 			System.out.println("not found");
 
 		}*/
-		Map<String, String> map = new HashMap<String, String>();
+		
+		//課程查詢
+		/*Map<String, String> map = new HashMap<String, String>();
 		map.put("org.apache.struts.taglib.html.TOKEN","2484496cd3d6201dcc8b67fc42d124cb");
 		map.put("kch", "");
 		map.put("kcm", "");
@@ -51,7 +53,20 @@ public class Mate {
 		
 		
 		Jsoupcookie jsoupcookie=new Jsoupcookie("http://202.207.247.44:8065/courseSearchAction.do", "bchaWyuIxRxfw4sW8Cbtv", map);
-		System.out.println(jsoupcookie.postDoc().text());
+		System.out.println(jsoupcookie.postDoc().text());*/
+		
+		//個人信息
+		Jsoupcookie jsoupcookie=new Jsoupcookie("http://202.207.247.49/userInfo.jsp","gebecSMxeQea2-gMHdotv");
+		//doc
+		Document document=jsoupcookie.getDoc();
+		
+		Elements tds=document.getElementsByAttributeValue("class", "fieldName");
+		String td=document.getElementsByAttributeValue("valign", "top").select("tbody").select("tr").get(0).child(5).text();
+		System.out.println(tds.get(0).nextElementSibling().text()+","
+		+td+","
+				+document.getElementsByAttributeValue("name", "dh").get(0).attr("value")+","
+		+document.getElementsByAttributeValue("name", "txdz").get(0).attr("value")+","
+				+document.getElementsByAttributeValue("name", "email").get(0).attr("value"));
 	}
 
 }

@@ -37,9 +37,9 @@ public class FACJdao {
 		case 9:
 			return kcsx(cookie, 7);
 		case 10:
-			return jg(cookie, 0);
-		case 11:
 			return jg(cookie, 1);
+		case 11:
+			return jg(cookie, 0);
 		case 12:
 			return bxqcj(cookie);
 		case 13:
