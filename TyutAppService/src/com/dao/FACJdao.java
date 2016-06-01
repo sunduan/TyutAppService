@@ -18,8 +18,9 @@ public class FACJdao {
 		int ad = Integer.parseInt(address);
 		System.out.println(ad);
 		switch (ad) {
-		case 1:
-			return rgfa(cookie);
+		//去除软工方案
+		/*case 1:
+			return rgfa(cookie);*/
 		case 2:
 			return kcsx(cookie, 0);
 		case 3:

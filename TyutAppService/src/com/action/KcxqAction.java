@@ -1,4 +1,4 @@
-package com.action;
+/*package com.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -101,3 +101,4 @@ public class KcxqAction {
 		this.kcm = kcm;
 	}
 }
+*/

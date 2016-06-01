@@ -1,17 +1,19 @@
 package TYUTservice.data;
 
+import java.util.HashMap;
 import java.util.List;
 
+import TYUTservice.data.msgdata.Course;
 import TYUTservice.data.msgdata.KccxMsg;
 
 public class MessageKccx extends MessageTyut {
-	private List<KccxMsg> kccxMsgs;
+	private HashMap<String, HashMap<String, Course>> kccxMsgs;
 
-	public List<KccxMsg> getKccxMsgs() {
+	public HashMap<String, HashMap<String, Course>> getKccxMsgs() {
 		return kccxMsgs;
 	}
 
-	public void setKccxMsgs(List<KccxMsg> kccxMsgs) {
+	public void setKccxMsgs(HashMap<String, HashMap<String, Course>> kccxMsgs) {
 		this.kccxMsgs = kccxMsgs;
 	}
 
@@ -20,7 +22,7 @@ public class MessageKccx extends MessageTyut {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MessageKccx(int id, int status,List<KccxMsg> kccxMsgs) {
+	public MessageKccx(int id, int status,HashMap<String, HashMap<String, Course>> kccxMsgs) {
 		super(id, status);
 		this.kccxMsgs=kccxMsgs;
 		// TODO Auto-generated constructor stub

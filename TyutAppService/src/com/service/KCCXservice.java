@@ -14,6 +14,9 @@ public MessageKccx getListKccx(String cookie,String kkyx,String kclb,String kch,
 	
 	return kccXdao.getListKccx(cookie, kkyx, kclb, kch, kcm,page);
 }
+public MessageKccx getListCourse(String cookie){
+	return kccXdao.getListCourse(cookie);
+}
 public KCCXdao getKccXdao() {
 	return kccXdao;
 }

@@ -20,8 +20,8 @@
 			<result name="error" >/index.jsp</result> -->
 		</action>
 		
-		<action name="kcxq" class="kcxqAction" method="getKcxqList">
-		</action>
+		<!-- <action name="kcxq" class="kcxqAction" method="getKcxqList">
+		</action> -->
 		<action name="pyfa" class="pyfaAction" method="getPyfaList">
 		</action>
 		<action name="grxx" class="grxxAction" method="getStudentInfo">
