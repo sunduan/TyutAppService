@@ -1,6 +1,8 @@
 package com.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -13,6 +15,7 @@ import org.apache.http.message.BasicNameValuePair;
 import vo.User;
 
 import com.base.BaseLogin;
+import com.network.Jsoupcookie;
 import com.yzm.GetLogo;
 
 public class TyutLogin extends BaseLogin {
@@ -36,6 +39,7 @@ private String testurl="202.207.247.44";
 		System.out.println(user.getUsername());
 		//http://202.207.247.49
 		//"http://202.207.247.44:8065
+		
 		this.loginurl = "http://"+testurl+":8065/loginAction.do";
 		this.cookiename = "JSESSIONID=";
 		this.cookieurl = "http://"+testurl+":8065/validateCodeAction.do?random="
@@ -43,11 +47,19 @@ private String testurl="202.207.247.44";
 		this.getCookie();
 		// this.cookie="bdc4JtKs639VNdcNO3Nlv";
 		System.out.println("验证码：" + yzm);
+		Map< String, String> map=new HashMap<String, String>();
+		map.put("zjh", user.getUsername());
+		map.put("mm", user.getPassword());
+		map.put("v_yzm", yzm);
+		
+		Jsoupcookie jsoupcookie=new Jsoupcookie("http://"+testurl+":8065/loginAction.do", this.cookie, map);
+		
 		this.params.add(new BasicNameValuePair("zjh", user.getUsername()));
 		// 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟�取锟斤拷锟斤拷
 		this.params.add(new BasicNameValuePair("mm", user.getPassword()));
 		this.params.add(new BasicNameValuePair("v_yzm", yzm));
-		String cs = this.login();
+		//String cs = this.login();
+		String cs=jsoupcookie.postLogin().html();
 		if (cs.indexOf("学分制综合教务") != -1) {
 			System.out.println("登录成功");
 			return "3";

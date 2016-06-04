@@ -26,5 +26,7 @@
 		</action>
 		<action name="grxx" class="grxxAction" method="getStudentInfo">
 		</action>
+		<action name="kcxq" class="kcxqAction" method="getKcxqList">
+		</action>
 	</package>
 </struts>    

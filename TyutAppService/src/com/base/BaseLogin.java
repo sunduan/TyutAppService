@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,9 +44,11 @@ public class BaseLogin {
 		String result = "";
 		try {
 			// 锟斤拷锟斤拷HTTP request
+			
 			httpRequest.setEntity(new UrlEncodedFormEntity(params, "utf-8"));
 			// 取锟斤拷HTTP response
 			httpRequest.setHeader("Cookie", cookiename + cookie);
+			
 			httpResponse = client.execute(httpRequest); // 执锟斤拷
 			// 锟斤拷状态锟斤拷为200 ok
 			if (httpResponse.getStatusLine().getStatusCode() == 200) { // 锟斤拷锟斤拷值锟斤拷锟斤拷
