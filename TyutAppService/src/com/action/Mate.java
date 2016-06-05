@@ -13,6 +13,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import vo.StudentStatus;
+
 import TYUTservice.data.MessageKccx;
 import TYUTservice.data.msgdata.KccxMsg;
 
@@ -41,11 +43,38 @@ public class Mate {
 		 * 
 		 * }
 		 */
-		KCCXdao mate=new KCCXdao();
-		mate.getBxqkc("bcgYhKYoG9d0xdH1prEuv","1", "0", "形势与政策", "", "", "", "", "", "");
+		Mate mate=new Mate();
+		mate.getStudentStatus("bcgYhKYoG9d0xdH1prEuv");
 
 	}
+public StudentStatus getStudentStatus(String cookie){
+		
+		
+		StudentStatus info=null;
+		Jsoupcookie jsoupcookie=new Jsoupcookie("http://202.207.247.44:8065/xjInfoAction.do?oper=xjxx",cookie);
+		//doc
+		Document doc=jsoupcookie.getDoc();
+		
+		if (doc==null||doc.text().equals("")) {
+			info.setStatus(2);
 
+		} else {
+		System.out.println(doc.text());
+		Element table=doc.getElementById("tblView");
+		Elements trs=table.select("tr");
+		
+		
+		info=new StudentStatus(trs.get(0).select("td").get(1).text(), trs.get(0).select("td").get(3).text(), 
+				trs.get(2).select("td").get(3).text(), trs.get(3).select("td").get(1).text(),
+				trs.get(5).select("td").get(3).text(), trs.get(6).select("td").get(1).text(),
+				trs.get(6).select("td").get(3).text(), trs.get(7).select("td").get(1).text(),
+				trs.get(12).select("td").get(1).text(), trs.get(12).select("td").get(3).text(),
+				trs.get(13).select("td").get(1).text(), trs.get(14).select("td").get(1).text(), 
+				trs.get(14).select("td").get(3).text(), trs.get(15).select("td").get(1).text(), trs.get(15).select("td").get(3).text(),
+				trs.get(16).select("td").get(1).text(), trs.get(16).select("td").get(3).text(), 3);
+		}
+		return info;
+	}
 	/*public void ydxx() {
 		Jsoupcookie jsoupcookie = new Jsoupcookie(
 				"http://202.207.247.49/xjInfoAction.do?oper=xjxx",

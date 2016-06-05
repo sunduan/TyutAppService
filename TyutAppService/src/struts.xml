@@ -29,5 +29,7 @@
 		</action>
 		<action name="kcxq" class="kcxqAction" method="getKcxqList">
 		</action>
+		<action name="xjxx" class="xjxxAction" method="getStudentStatus">
+		</action>
 	</package>
 </struts>    

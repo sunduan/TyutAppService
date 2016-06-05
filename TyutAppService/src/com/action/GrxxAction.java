@@ -10,14 +10,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import vo.StudentInfo;
+import vo.StudentStatus;
 
 import com.service.GRXXservice;
 
 public class GrxxAction {
 	private String cookie;
 	private GRXXservice grxXservice;
-	public void getStudentInfo() throws IOException, JSONException{
 
+	public void getStudentInfo() throws IOException, JSONException{
+		
 		HttpServletResponse response = ServletActionContext.getResponse();
 		response.setContentType("text/html");
 		response.setCharacterEncoding("utf-8");

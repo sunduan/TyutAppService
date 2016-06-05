@@ -47,4 +47,7 @@
 	<bean id="grxxAction" class="com.action.GrxxAction" scope="prototype">
 		<property name="grxXservice" ref="GRXXservice"></property>
 	</bean>
+	<bean id="xjxxAction" class="com.action.XjxxAction" scope="prototype">
+		<property name="grxXservice" ref="GRXXservice"></property>
+	</bean>
 </beans>
