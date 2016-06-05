@@ -10,6 +10,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.conn.HttpHostConnectException;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 public class GetLogo {
@@ -88,6 +89,9 @@ public class GetLogo {
 	        }  
 	    } catch (Exception e) {  
 	        e.printStackTrace();  
+	        if(e instanceof HttpHostConnectException){
+	        	return "1";
+	        }
 	    }
 		return yzm;
 	}

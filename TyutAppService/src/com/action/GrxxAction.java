@@ -26,7 +26,7 @@ public class GrxxAction {
 		
 		StudentInfo info=grxXservice.getStudentInfo(cookie);
 		JSONObject mainjson = new JSONObject();
-		if(info!=null){
+		if(info.getStatus()==3){
 			JSONObject key= new JSONObject();
 			key.put("name", info.getName());
 			key.put("userper", info.getUserper());
@@ -39,7 +39,7 @@ public class GrxxAction {
 			mainjson.put("grxx",key);
 		}else{
 			mainjson.put("id",0);
-			mainjson.put("status",2);		}
+			mainjson.put("status",info.getStatus());		}
 		
 		out.println(mainjson);
 		out.flush();

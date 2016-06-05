@@ -23,8 +23,13 @@ public class PYFAdao {
 		Jsoupcookie jsoupcookie = new Jsoupcookie(
 				"http://202.207.247.44:8065/gradeLnAllAction.do?type=ln&oper=lnfaqk&flag=zx",
 				cookie);
-		Document doc = jsoupcookie.getDoc();
-		
+		Document doc = jsoupcookie.getDoc(50000);
+
+		if(doc==null||doc.text()==""){
+			pyfa.setId(3);
+			pyfa.setStatus(2);
+		}else{
+			
 		//∆•≈‰œÓ ˝
 				/*String start="gradeLnAllAction.do?type=ln&oper=lnfaqkxx&fajhh=";
 				String end="\"";*/
@@ -42,8 +47,14 @@ public class PYFAdao {
 		jsoupcookie = new Jsoupcookie(
 				"http://202.207.247.44:8065/gradeLnAllAction.do?type=ln&oper=lnfaqkxx&"+matcher.group(),
 				cookie);
-		doc = jsoupcookie.getDoc();
+		doc = jsoupcookie.getDoc(100000);
 
+
+		if(doc==null||doc.text()==""){
+			pyfa.setId(3);
+			pyfa.setStatus(2);
+		}else{
+			
 		System.out.println(doc.text());
 		Element table = doc.getElementById("tblView");
 		Elements trs = table.select("tr");
@@ -84,7 +95,8 @@ public class PYFAdao {
 			pyfa.setStatus(3);
 			pyfa.setPyfaMsgs(list);
 		}
-
+		}
+		}
 		return pyfa;
 	}
 }

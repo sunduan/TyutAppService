@@ -59,7 +59,13 @@ public class FACJdao {
 				"http://202.207.247.44:8065/gradeLnAllAction.do?type=ln&oper=fainfo&fajhh=2514#qb_2514",
 				cookie);
 		Document doc = jsoupcookie.getDoc();
-
+		
+		if(doc==null||doc.text()==""){
+			facj.setId(3);
+			facj.setStatus(2);
+		}else{
+			
+		
 		Elements trs = doc.getElementsByAttributeValue("onmouseout",
 				"this.className='even';");
 		int l = trs.size();
@@ -78,6 +84,7 @@ public class FACJdao {
 			facj.setStatus(3);
 			facj.setFacjMsgs(list);
 		}
+		}
 		return facj;
 
 	}
@@ -92,6 +99,12 @@ public class FACJdao {
 				cookie);
 		Document doc = jsoupcookie.getDoc();
 
+
+		if(doc==null||doc.text()==""){
+			facj.setId(3);
+			facj.setStatus(2);
+		}else{
+			
 		Elements tables = doc.getElementsByAttributeValue("class", "titleTop2");
 		Elements trs = tables.get(ad).getElementsByAttributeValue("onmouseout",
 				"this.className='even';");
@@ -111,7 +124,7 @@ public class FACJdao {
 			facj.setStatus(3);
 			facj.setFacjMsgs(list);
 		}
-
+		}
 		return facj;
 
 	}
@@ -126,6 +139,12 @@ public class FACJdao {
 				cookie);
 		Document doc = jsoupcookie.getDoc();
 
+
+		if(doc==null||doc.text()==""){
+			facj.setId(3);
+			facj.setStatus(2);
+		}else{
+			
 		Elements tables = doc.getElementsByAttributeValue("class", "titleTop2");
 		Elements trs = tables.get(ad).getElementsByAttributeValue("onmouseout",
 				"this.className='even';");
@@ -145,7 +164,7 @@ public class FACJdao {
 			facj.setStatus(3);
 			facj.setFacjMsgs(list);
 		}
-
+		}
 		return facj;
 
 	}
@@ -160,6 +179,12 @@ public class FACJdao {
 				"http://202.207.247.44:8065/bxqcjcxAction.do", cookie);
 		Document doc = jsoupcookie.getDoc();
 
+
+		if(doc==null||doc.text()==""){
+			facj.setId(3);
+			facj.setStatus(2);
+		}else{
+			
 		Elements tables = doc.getElementsByAttributeValue("class", "titleTop2");
 		Elements trs = tables.get(0).getElementsByAttributeValue("onmouseout",
 				"this.className='even';");
@@ -182,7 +207,7 @@ public class FACJdao {
 			facj.setStatus(3);
 			facj.setFacjMsgs(list);
 		}
-
+		}
 		return facj;
 
 	}
@@ -198,6 +223,11 @@ public class FACJdao {
 				cookie);
 		Document doc = jsoupcookie.getDoc();
 
+		if(doc==null||doc.text()==""){
+			facj.setId(3);
+			facj.setStatus(2);
+		}else{
+			
 		System.out.println(doc.text().indexOf("非成绩录入时间!"));
 		if (doc.text().indexOf("非成绩录入时间!") != -1) {
 			facj.setId(3);
@@ -224,6 +254,7 @@ public class FACJdao {
 				facj.setStatus(3);
 				facj.setFacjMsgs(list);
 			}
+		}
 		}
 		return facj;
 

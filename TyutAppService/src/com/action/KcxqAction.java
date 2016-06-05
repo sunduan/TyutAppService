@@ -101,7 +101,11 @@ public class KcxqAction {
 		response.setCharacterEncoding("utf-8");
 		PrintWriter out;
 		out = response.getWriter();
-		
+		//½âÂë
+		kcm=new String(kcm.getBytes("ISO-8859-1"),"utf-8");
+		jsm=new String(jsm.getBytes("ISO-8859-1"),"utf-8");
+		xsjc=new String(xsjc.getBytes("ISO-8859-1"),"utf-8");
+		System.out.println("action²ã"+kcm);
 		MessageKccx kccx = kccXservice.getBxqkc(cookie,actionType, pageNumber, kcm, jsm, xsjc, skjc, xaqh, jxlh, jash);
 		JSONObject mainjson = new JSONObject();
 		if (kccx.getStatus() == 3) {
@@ -121,7 +125,7 @@ public class KcxqAction {
 			}
 			mainjson.put("id", kccx.getId());
 			mainjson.put("status", kccx.getStatus());
-			mainjson.put("kccxMsgs", key);
+			mainjson.put("kcxqMsgs", key);
 		}else {
 			mainjson.put("id", kccx.getId());
 			mainjson.put("status", kccx.getStatus());

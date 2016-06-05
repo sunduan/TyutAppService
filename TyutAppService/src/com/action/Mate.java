@@ -16,6 +16,7 @@ import org.jsoup.select.Elements;
 import TYUTservice.data.MessageKccx;
 import TYUTservice.data.msgdata.KccxMsg;
 
+import com.dao.KCCXdao;
 import com.network.Jsoupcookie;
 
 
@@ -40,8 +41,8 @@ public class Mate {
 		 * 
 		 * }
 		 */
-		Mate mate = new Mate();
-		mate.getBxqkc("1", "0", "", "", "", "", "", "", "");
+		KCCXdao mate=new KCCXdao();
+		mate.getBxqkc("bcgYhKYoG9d0xdH1prEuv","1", "0", "形势与政策", "", "", "", "", "", "");
 
 	}
 
@@ -124,7 +125,7 @@ public class Mate {
 				"http://202.207.247.44:8065/courseSearchAction.do",
 				"bicexXKuOOmVZ6xdp0yuv", value, key, map);
 		// System.out.println(.text());
-		Document doc = jsoupcookie.postDoc();
+		Document doc = jsoupcookie.postDoc(5000);
 		doc.charset(Charset.forName("GBK"));
 		//Element element=null;
 		if (doc.text().equals("")) {

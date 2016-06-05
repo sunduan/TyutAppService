@@ -9,6 +9,9 @@ public class FacjMsg {
 	private String kcsx;
 	private String cj;
 	private String wtgyy="";
+	public FacjMsg(){
+		
+	}
 	public FacjMsg(String kch, String kxh, String kcm, String ywkcm, String xf,
 			String kcsx, String cj,String wtgyy) {
 		super();

@@ -72,6 +72,12 @@ public class KCCXdao {
 				"http://202.207.247.44:8065/xkAction.do?actionType=6", cookie);
 		Document doc = jsoupcookie.getDoc();
 
+		if (doc==null||doc.text().equals("")) {
+			kccx.setId(3);
+			kccx.setStatus(2);
+
+		} else {
+		
 		Elements trs = doc.getElementsByAttributeValue("bgcolor", "#FFFFFF");
 		int l = trs.size();
 		System.out.println("一共"+l+"项");
@@ -153,7 +159,7 @@ public class KCCXdao {
 			kccx.setStatus(3);
 			kccx.setKccxMsgs(list);
 		}
-
+		}
 		return kccx;
 	}
 
@@ -247,6 +253,7 @@ public class KCCXdao {
 				"9b21211bd13059e2dadfe6357e7a6ecf");
 		map.put("kch", "");
 		// 课程名 汉字
+		System.out.println("课程名"+kcm);
 		map.put("kcm", kcm);
 		// 教师名 汉字
 		map.put("jsm", jsm);
@@ -278,9 +285,9 @@ public class KCCXdao {
 				"http://202.207.247.44:8065/courseSearchAction.do",
 				cookie, value, key, map);
 		// System.out.println(.text());
-		Document doc = jsoupcookie.postDoc();
+		Document doc = jsoupcookie.postDoc(5000);
 		doc.charset(Charset.forName("GBK"));
-		if (doc.text().equals("")) {
+		if (doc==null||doc.text().equals("")) {
 			kccx.setId(3);
 			kccx.setStatus(2);
 
